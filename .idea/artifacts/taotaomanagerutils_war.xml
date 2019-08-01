@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="taotaomanagerutils:war">
+    <output-path>$PROJECT_DIR$/taotao-manager/taotao-manager-utils/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>taotaomanagerutils</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="taotao-manager-utils-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="taotaomanagerutils:war exploded" />
+    </root>
+  </artifact>
+</component>

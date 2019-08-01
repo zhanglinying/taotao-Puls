@@ -72,4 +72,6 @@ public class ItemCat extends BasePojo {
 
     //拓展text字段，用于easyui的tree组件使用
     public String getText(){ return this.getName();}
+
+    public String getState(){return this.getIsParent() ? "closed":"open";}
 }

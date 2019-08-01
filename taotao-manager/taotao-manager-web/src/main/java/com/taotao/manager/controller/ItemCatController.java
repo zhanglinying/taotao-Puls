@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,9 +26,11 @@ public class ItemCatController {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<ItemCat>> queryItemCatListByParentId() {
+    public ResponseEntity<List<ItemCat>> queryItemCatListByParentId(@RequestParam(value = "id",defaultValue = "0")Long parentId) {
         try {
-            List<ItemCat> list =this.itemCatService.queryItemCatListByParentId(0L);
+            ItemCat itemCat=new ItemCat();
+            itemCat.setParentId(parentId);
+            List<ItemCat> list =this.itemCatService.queryListByWhere(itemCat);
             if(null == list || list.isEmpty()){
                 //资源不存在
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);

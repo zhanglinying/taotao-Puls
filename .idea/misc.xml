@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/taotao-common" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-utils" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-web" />
   </component>
   <component name="JavaScriptSettings">
@@ -14,6 +15,11 @@
         <option value="$PROJECT_DIR$/taotao-manager/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-cmomon/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/taotao-manager/taotao-manager-utils/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
