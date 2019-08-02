@@ -1,5 +1,7 @@
 package com.taotao.manager.utils;
 
+import org.junit.Test;
+
 import java.util.UUID;
 
 /**
@@ -18,6 +20,4 @@ public class UUIDUtils {
         orderId = orderId < 0 ? -orderId : orderId; //String.hashCode() 值会为空
         return orderId;
     }
-
-
 }

@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.PageRowBounds;
 import com.taotao.pojo.BasePojo;
+import com.taotao.pojo.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
@@ -168,4 +169,5 @@ public abstract class BaseService<T extends BasePojo> {
     public Integer deleteByWhere(T record){
         return this.mapper.delete(record);
     }
+
 }

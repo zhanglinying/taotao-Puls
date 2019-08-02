@@ -38,17 +38,8 @@ public class ItemController {
                 //响应400
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-            //初始化数据
-            item.setStatus(1);
-            //强制设置id为null
-            item.setId((long) UUIDUtils.getUUIDInOrderId());
             //保存商品基本数据
-            this.itemService.saveService(item);
-            ItemDesc itemDesc=new ItemDesc();
-            itemDesc.setItemId(item.getId());
-            itemDesc.setItemDesc(desc);
-            //保存描述数据
-            itemDescService.saveService(itemDesc);
+            this.itemService.saveItem(item,desc);
             //成功201
             return ResponseEntity.status(HttpStatus.CREATED).build();
         }catch (Exception e){
