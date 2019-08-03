@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/taotao-parent/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-manager/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-cmomon/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

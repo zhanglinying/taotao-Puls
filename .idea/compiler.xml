@@ -11,7 +11,7 @@
         <module name="taotao-manager-service" />
         <module name="taotao-manager-pojo" />
         <module name="taotao-manager-uitls" />
-        <module name="taotao-cmomon" />
+        <module name="taotao-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

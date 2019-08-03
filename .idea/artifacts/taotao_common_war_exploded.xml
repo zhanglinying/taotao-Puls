@@ -18,6 +18,9 @@
           <element id="library" level="project" name="Maven: taglibs:standard:1.0.4" />
           <element id="library" level="project" name="Maven: xalan:xalan:2.6.0" />
           <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" />
         </element>
       </element>
       <element id="directory" name="META-INF">

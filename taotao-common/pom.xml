@@ -9,6 +9,16 @@
         <relativePath>../taotao-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.taotao.cmomon</groupId>
-    <artifactId>taotao-cmomon</artifactId>
+
+    <groupId>com.taotao.common</groupId>
+    <artifactId>taotao-common</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+    </dependencies>
+
+
 </project>
