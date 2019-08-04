@@ -36,4 +36,7 @@ public class PageController {
     public String add() {
         return "item-add";
     }
+
+    @RequestMapping(value = "/item-edit")
+    public String edit(){return  "item-edit";}
 }

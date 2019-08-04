@@ -29,7 +29,7 @@ public class ItemService extends BaseService<Item> {
     public void saveItem(Item item, String desc) {
         //初始化数据
         item.setStatus(1);
-        //强制设置id为null
+        //生产id
         long uuid= (long) UUIDUtils.getUUIDInOrderId();
         System.out.println(uuid);
         item.setId(uuid);
