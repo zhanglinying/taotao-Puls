@@ -50,4 +50,16 @@ public class ItemService extends BaseService<Item> {
         List<Item> items = this.itemMapper.selectByExample(example);
         return new PageInfo<Item>(items);
     }
+
+    public void updateItem(Item item, String desc) {
+        //强制设置不能修改的字段设置为null
+        item.setStatus(null);
+        item.setCreated(null);
+        super.updateService(item);
+        //修改描述数据
+        ItemDesc itemDesc=new ItemDesc();
+        itemDesc.setItemId(item.getId());
+        itemDesc.setItemDesc(desc);
+        this.itemDescService.updateService(itemDesc);
+    }
 }
