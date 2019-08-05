@@ -2,7 +2,6 @@ package com.taotao.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.github.pagehelper.PageRowBounds;
 import com.taotao.pojo.BasePojo;
 import com.taotao.pojo.Item;
 import org.springframework.beans.factory.annotation.Autowired;
