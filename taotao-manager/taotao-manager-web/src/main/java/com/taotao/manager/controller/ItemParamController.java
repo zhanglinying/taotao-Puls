@@ -110,6 +110,7 @@ public class ItemParamController {
             this.itemParamService.deleteByIds(ItemParam.class, "id", list);
             LOGGER.debug("删除规格成功!");
             //成功返回201
+
             return ResponseEntity.status(HttpStatus.CREATED).body(null);
         } catch (Exception e) {
             e.printStackTrace();
