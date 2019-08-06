@@ -28,9 +28,7 @@ public class PageController {
     }
 
     @RequestMapping(value = "/item-param-list")
-    public String itemList() {
-        return "item-param-list";
-    }
+    public String itemList() { return "item-param-list"; }
 
     @RequestMapping(value = "/item-add")
     public String add() {
@@ -38,6 +36,9 @@ public class PageController {
     }
 
     @RequestMapping(value = "/item-edit")
-    public String edit(){return  "item-edit";}
+    public String edit() { return "item-edit"; }
+
+    @RequestMapping(value = "item-param-add")
+    public String item_Param_Add(){ return "item-param-add";}
 
 }

@@ -63,15 +63,26 @@
         	$.messager.confirm('确认','确定删除ID为 '+ids+' 的商品规格吗？',function(r){
         	    if (r){
         	    	var params = {"ids":ids};
-                	$.post("/rest/item/param/delete",params, function(data){
-            			if(data.status == 200){
-            				$.messager.alert('提示','删除商品规格成功!',undefined,function(){
-            					$("#itemParamList").datagrid("reload");
-            				});
-            			}
-            		});
-        	    }
-        	});
+                    $.ajax({
+                        url:"/rest/item/param/delete",
+                        type:"POST",
+                        data:{"ids":ids},
+                        statusCode:{
+                            201:function () {
+                                $.messager.alert('提示','删除商品规格成功!',undefined,function(){
+                                    $("#itemParamList").datagrid("reload");
+                                });
+                            },
+                            400:function () {
+                                $.messager.alert('提示','参数错误!');
+                            },
+                            500:function () {
+                                $.messager.alert('提示','删除规格失败!');
+                            }
+                        }
+                    })
+                }
+            });
         }
     }];
 </script>

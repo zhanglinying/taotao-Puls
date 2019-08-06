@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author 小浪浪
@@ -61,11 +63,12 @@ public class ItemController {
 
     /**
      * 功能:<新增商品信息>
-     * @author
-     * @date 2019-08-05 14:23:26
+     *
      * @param item
      * @param desc
      * @return {@link ResponseEntity< Void>}
+     * @author
+     * @date 2019-08-05 14:23:26
      **/
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> saveItem(Item item, @RequestParam("desc") String desc) {
@@ -90,11 +93,12 @@ public class ItemController {
 
     /**
      * 功能:<修改商品>
-     * @author
-     * @date 2019-08-05 14:26:32
+     *
      * @param item
      * @param desc
      * @return {@link ResponseEntity< Void>}
+     * @author
+     * @date 2019-08-05 14:26:32
      **/
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<Void> updateItem(Item item, @RequestParam("desc") String desc) {
@@ -119,22 +123,26 @@ public class ItemController {
 
 
     /**
-     * 功能:<>
-     * @author
-     * @date 2019-08-05 11:27:01 
+     * 功能:<按id单个或批量删除商品>
+     *
      * @param ids
      * @return {@link ResponseEntity< Integer>}
+     * @author
+     * @date 2019-08-05 11:27:01
      **/
-    @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public ResponseEntity<Integer> deleteItemById(@RequestParam("ids") Long ids){
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public ResponseEntity<Integer> deleteItemById(@RequestParam("ids") Object[] ids) {
         try {
+            List<Object> list =Arrays.asList(ids);
             //this.itemService.deleteById(ids);
-            System.out.println(ids);
-        }catch (Exception e){
+            LOGGER.debug("删除商品的id为：", Arrays.toString(list.toArray()));
+            this.itemService.deleteByIds(Item.class, "id", list);
+            //成功返回201
+            return ResponseEntity.status(HttpStatus.CREATED).body(null);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return null;
+        //错误返回500
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
-
 }
