@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping(value = "page")
+@RequestMapping(value = "/page")
 public class PageController {
     @RequestMapping(value = "/login")
     public String login() {
@@ -40,5 +40,4 @@ public class PageController {
 
     @RequestMapping(value = "item-param-add")
     public String item_Param_Add(){ return "item-param-add";}
-
 }

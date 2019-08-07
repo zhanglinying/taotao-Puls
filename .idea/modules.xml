@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager-uitls/taotao-manager-uitls.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager-uitls/taotao-manager-uitls.iml" />
       <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager-web/taotao-manager-web.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager-web/taotao-manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/taotao-parent/taotao-parent.iml" filepath="$PROJECT_DIR$/taotao-parent/taotao-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-web/taotao-web.iml" filepath="$PROJECT_DIR$/taotao-web/taotao-web.iml" />
     </modules>
   </component>
 </project>
