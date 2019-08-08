@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="http://manager.taotao.com/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    alert($)
+    $(function () {
+        $.ajax({
+            url:"http://manager.taotao.com/json.jsp",
+            type:"GET",
+            datatype:"json",
+            success:function (data) {
+                alert(data)
+            }
+        })
+    })
+</script>
+<body>
+
+</body>
+</html>
