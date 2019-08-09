@@ -9,9 +9,4 @@ import tk.mybatis.mapper.common.Mapper;
  * @date 2019-08-01 15:26
  */
 public interface ItemMapper extends Mapper<Item> {
-
-
-
-
-
 }

@@ -90,6 +90,7 @@ public class PicUploadController {
 				isLegal = true;
 			}
 		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 		// 状态
@@ -118,5 +119,4 @@ public class PicUploadController {
 		String fileName = new DateTime(nowDate).toString("yyyyMMddhhmmssSSSS") + RandomUtils.nextInt(100, 9999) + "." + StringUtils.substringAfterLast(sourceFileName, ".");
 		return fileFolder + File.separator + fileName;
 	}
-
 }

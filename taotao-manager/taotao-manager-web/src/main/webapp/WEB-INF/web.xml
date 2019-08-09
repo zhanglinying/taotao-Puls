@@ -67,7 +67,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>/rest/page/login</welcome-file>
+    <welcome-file>rest/page/login</welcome-file>
   </welcome-file-list>
 
 </web-app>
