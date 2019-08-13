@@ -12,10 +12,12 @@
         <module name="taotao-common" />
         <module name="taotao-manager-pojo" />
         <module name="taotao-manager-uitls" />
+        <module name="itcast-httpclient" />
         <module name="taotao-manager-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="itcast-httpclient" target="1.5" />
       <module name="taotao-cmomon" target="1.7" />
       <module name="taotao-common" target="1.7" />
       <module name="taotao-manager" target="1.7" />

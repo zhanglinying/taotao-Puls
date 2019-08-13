@@ -5,9 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Table(name = "tb_content_category")
-public class ContentCategory extends BasePojo {
+public class ContentCategory extends BasePojo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,6 +82,18 @@ public class ContentCategory extends BasePojo {
 
     public String getState() {
         return getIsParent() ? "closed" : "open";
+    }
+
+    @Override
+    public String toString() {
+        return "ContentCategory{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", name='" + name + '\'' +
+                ", status=" + status +
+                ", sortOrder=" + sortOrder +
+                ", isParent=" + isParent +
+                '}';
     }
 
 }

@@ -2,6 +2,7 @@ package com.taotao.manager.controller;
 
 import com.taotao.pojo.ContentCategory;
 import com.taotao.service.ContentCategoryService;
+import org.apache.ibatis.reflection.SystemMetaObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,9 +65,20 @@ public class ContentCategoryController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<ContentCategory> saveContentCategory(ContentCategory category) {
         try {
+            category.setId(null);
+            category.setIsParent(false);
+            category.setSortOrder(1);
+            category.setStatus(1);
+            this.categoryService.save(category);
+            ContentCategory parent = this.categoryService.queryById(category.getParentId());
+            //判断父节点的isParent是否为true，如果不是则修改为true
+            if(!parent.getIsParent()){
+                parent.setIsParent(true);
+                this.categoryService.updateService(parent);
+            }
             //调用service执行，确保事务
-            ContentCategory contentCategory = this.categoryService.saveContentCategory(category);
-            return ResponseEntity.status(HttpStatus.CREATED).body(contentCategory);
+            //ContentCategory contentCategory = this.categoryService.saveContentCategory(category);
+            return ResponseEntity.status(HttpStatus.CREATED).body(category);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,7 +121,7 @@ public class ContentCategoryController {
             List<ContentCategory> list = this.categoryService.queryListByWhere(record);
             if(null == list || list.isEmpty()){
                 ContentCategory parent=new ContentCategory();
-                parent.setParentId(category.getParentId());
+                parent.setId(category.getParentId());
                 parent.setIsParent(false);
                 this.categoryService.updateService(parent);
             }

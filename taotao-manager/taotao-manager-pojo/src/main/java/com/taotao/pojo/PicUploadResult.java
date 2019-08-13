@@ -1,6 +1,8 @@
 package com.taotao.pojo;
 
-public class PicUploadResult {
+import java.io.Serializable;
+
+public class PicUploadResult implements Serializable {
 
     //判断是否上传成功 0成功 1失败
     private Integer error;
