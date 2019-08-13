@@ -40,62 +40,7 @@
                     if (!cfg.DATA_MSlide) {
                         cfg.DATA_MSlide = [];
                     }
-                    var data = [{
-                        "srcB": "http://image.taotao.com/images/2019/08/09/2019080902452072504521.jpg",
-                        "height": 240,
-                        "alt": "",
-                        "width": 670,
-                        "src": "http://image.taotao.com/images/2019/08/09/2019080902452072504521.jpg",
-                        "widthB": 550,
-                        "href": "http://sale.jd.com/act/e0FMkuDhJz35CNt.html?cpdad=1DLSUE",
-                        "heightB": 240
-                    }, {
-                        "srcB": "http://image.taotao.com/images/2019/08/09/2019080902452136708381.jpg",
-                        "height": 240,
-                        "alt": "",
-                        "width": 670,
-                        "src": "http://image.taotao.com/images/2019/08/09/2019080903072188808954.jpg",
-                        "widthB": 550,
-                        "href": "http://sale.jd.com/act/UMJaAPD2VIXkZn.html?cpdad=1DLSUE",
-                        "heightB": 240
-                    }, {
-                        "srcB": "http://image.taotao.com/images/2015/03/03/2015030304345761102862.jpg",
-                        "height": 240,
-                        "alt": "",
-                        "width": 670,
-                        "src": "http://image.taotao.com/images/2019/08/09/201908090307222870637.jpg",
-                        "widthB": 550,
-                        "href": "http://sale.jd.com/act/UMJaAPD2VIXkZn.html?cpdad=1DLSUE",
-                        "heightB": 240
-                    }, {
-                        "srcB": "http://image.taotao.com/images/2015/03/03/201503030434200950530.jpg",
-                        "height": 240,
-                        "alt": "",
-                        "width": 670,
-                        "src": "http://image.taotao.com/images/2019/08/09/2019080903100511809841.jpg",
-                        "widthB": 550,
-                        "href": "http://sale.jd.com/act/kj2pmwMuYCrGsK3g.html?cpdad=1DLSUE",
-                        "heightB": 240
-                    }, {
-                        "srcB": "http://image.taotao.com/images/2015/03/03/2015030304333327002286.jpg",
-                        "height": 240,
-                        "alt": "",
-                        "width": 670,
-                        "src": "http://image.taotao.com/images/2019/08/09/2019080903072196203265.jpg",
-                        "widthB": 550,
-                        "href": "http://sale.jd.com/act/xcDvNbzAqK0CoG7I.html?cpdad=1DLSUE",
-                        "heightB": 240
-                    }, {
-                        "srcB": "http://image.taotao.com/images/2015/03/03/2015030304324649807137.jpg",
-                        "height": 240,
-                        "alt": "",
-                        "width": 670,
-                        "src": "http://image.taotao.com/images/2019/08/09/201908090307222040805.jpg",
-                        "widthB": 550,
-                        "href": "http://sale.jd.com/act/eDpBF1s8KcTOYM.html?cpdad=1DLSUE",
-                        "heightB": 240
-                    }];
-
+                    var data=${indexAd1}
 
                     cfg.DATA_MSlide = data;
                     // 初始化一个广告信息
