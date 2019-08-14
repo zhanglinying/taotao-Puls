@@ -72,7 +72,7 @@
                     "alt": "",
                     "href": "http://c.fa.jd.com/adclick?sid=2&cid=601&aid=3679&bid=4127&unit=36312&advid=107474&guv=&url=http://sale.jd.com/act/hG3N4B2nt6XUCA.html",
                     "index": 0,
-                    "src": "http://img11.360buyimg.com/da/jfs/t382/296/691255709/13325/afe321fd/542907d2Nedd5849c.jpg",
+                    "src": "http://image.taotao.com/images/2019/08/14/2019081403105373409062.jpg",
                     "ext": ""
                 },
                 {
@@ -191,18 +191,7 @@
         <script>
             // 右上方广告位
             (function () {
-                var data = [
-                    {
-                        "width": 310,
-                        "height": 70,
-                        "src": "/images/5440ce68Na00d019e.jpg",
-                        "href": "http://c.fa.jd.com/adclick?sid=2&cid=601&aid=3614&bid=4196&unit=35984&advid=109277&guv=&url=http://sale.jd.com/mall/FQLUNlG53wbX7m.html",
-                        "alt": "",
-                        "widthB": 210,
-                        "heightB": 70,
-                        "srcB": "http://img14.360buyimg.com/da/jfs/t334/155/1756719493/14371/e367c503/5440ce6dNd056ce39.jpg"
-                    }
-                ];
+                var data = ${indexAd2};
                 var ad = pageConfig.FN_GetRandomData(data);
                 ad = pageConfig.FN_GetCompatibleData(ad);
                 document.write("<a href=\"" + ad.href + "\" target=\"_blank\"><img data-img=\"2\" src=\"" + ad.src + "\" width=\"" + ad.width + "\" height=\"" + ad.height + "\" alt=\"" + ad.alt + "\" /></a>");
