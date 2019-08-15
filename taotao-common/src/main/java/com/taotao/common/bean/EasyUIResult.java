@@ -61,8 +61,8 @@ public class EasyUIResult {
             }
             return new EasyUIResult(jsonNode.get("total").intValue(), list);
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
-
 }
