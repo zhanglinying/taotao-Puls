@@ -1,6 +1,5 @@
 package com.taotao.service;
 
-import com.taotao.mapper.ContentCategoryMapper;
 import com.taotao.pojo.ContentCategory;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ContentCategoryService extends BaseService<ContentCategory> {
-
 
     public ContentCategory saveContentCategory(ContentCategory category) {
         category.setId(null);

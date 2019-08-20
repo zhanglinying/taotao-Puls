@@ -15,4 +15,6 @@ public class PageController {
         @RequestMapping(value = "/index")
         public String index(){ return "index";}
 
+        @RequestMapping(value = "/item")
+        public String item(){return "item";}
 }

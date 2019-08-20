@@ -7,25 +7,27 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!-- 配置整合mybatis过程 -->
-    <!-- 1.配置数据库相关参数properties的属性：${url} -->
-   <!-- <bean class="com.imooc.myo2o.util.EncryptPropertyPlaceholderConfigurer">
+    <context:component-scan base-package="com.taotao.service">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>
+    
+
+    <!--引入Redis配置文件-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:jdbc.properties</value>
-                <value>classpath:redis.properties</value>
+                <value>classpath:database.properties</value>
             </list>
         </property>
-        <property name="fileEncoding" value="UTF-8" />
-    </bean>-->
-    <!-- 2.数据库连接池 -->
-    <context:property-placeholder location="classpath*:database.properties"/>
+    </bean>
+
+
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" scope="singleton">
-        <property name="driverClassName" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${user}"/>
-        <property name="password" value="${password}"/>
-        <property name="initialSize" value="${initialSize}"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://193.112.217.168:3306/taotao?useUnicode=true"/>
+        <property name="username" value="root"/>
+        <property name="password" value="6813849"/>
+    <!--    <property name="initialSize" value="${initialSize}"/>
         <property name="maxActive" value="${maxActive}"/>
         <property name="maxIdle" value="${maxIdle}"/>
         <property name="minIdle" value="${minIdle}"/>
@@ -37,7 +39,7 @@
         <property name= "testOnBorrow" value="false"/>
         <property name= "testOnReturn" value="false"/>
         <property name= "validationQuery" value="select 1"/>
-        <property name= "numTestsPerEvictionRun" value="${maxActive}"/>
+        <property name= "numTestsPerEvictionRun" value="${maxActive}"/>-->
     </bean>
     <!-- 3.配置SqlSessionFactory对象 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

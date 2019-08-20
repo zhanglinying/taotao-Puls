@@ -57,6 +57,4 @@
     </bean>
     <!--4.扫描相关的bean-->
     <context:component-scan base-package="com.taotao"/>
-
-
 </beans>

@@ -1,11 +1,14 @@
 package com.taotao.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "tb_item")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Item extends BasePojo {
 
     @Id

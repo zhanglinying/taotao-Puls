@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -133,7 +135,7 @@ public class ItemController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public ResponseEntity<Integer> deleteItemById(@RequestParam("ids") Object[] ids) {
         try {
-            List<Object> list =Arrays.asList(ids);
+            List<Object> list = Arrays.asList(ids);
             //this.itemService.deleteById(ids);
             LOGGER.debug("删除商品的id为：", Arrays.toString(list.toArray()));
             this.itemService.deleteByIds(Item.class, "id", list);
@@ -144,5 +146,19 @@ public class ItemController {
         }
         //错误返回500
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    }
+
+    @RequestMapping(value = "{itemId}",method = RequestMethod.GET)
+    public ResponseEntity<Item> queryById(@PathVariable("itemId") Long itemId) {
+        try {
+            Item item = this.itemService.queryById(itemId);
+            if(null==item){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            return ResponseEntity.ok(item);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
 }
