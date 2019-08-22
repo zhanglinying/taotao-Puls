@@ -1,20 +1,14 @@
 package com.taotao.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taotao.common.bean.ItemCatData;
 import com.taotao.common.bean.ItemCatResult;
 import com.taotao.mapper.ItemCatMapper;
-import com.taotao.pojo.Item;
 import com.taotao.pojo.ItemCat;
+import com.taotao.service.redis.JedisClient;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
-import redis.clients.jedis.JedisCluster;
-import tk.mybatis.mapper.common.Mapper;
-
-import javax.print.attribute.standard.MediaSize;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +27,7 @@ public class ItemCatService extends BaseService<ItemCat> {
     private ItemCatMapper itemCatMapper;
 
     @Autowired
-    private RedisService redisService;
+    private JedisClient jedisClient;
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
@@ -48,7 +42,7 @@ public class ItemCatService extends BaseService<ItemCat> {
         ItemCatResult result = new ItemCatResult();
         //先从缓存中命中，如果命中则直接返回，没有命中程序继续执行，不影响下面的业务
         try {
-            String cachaData = this.redisService.get(REDIS_KEY);
+            String cachaData = this.jedisClient.get(REDIS_KEY);
             if (StringUtils.isNotEmpty(cachaData)) {
                 return OBJECT_MAPPER.readValue(cachaData, ItemCatResult.class);
             }
@@ -101,7 +95,7 @@ public class ItemCatService extends BaseService<ItemCat> {
             }
         }
         try {
-            this.redisService.set(REDIS_KEY, OBJECT_MAPPER.writeValueAsString(result));
+            this.jedisClient.setAndExpire(REDIS_KEY,result,50000);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2019-08-07 17:25
  */
 @Controller
-@RequestMapping("/page")
 public class PageController {
 
         @RequestMapping(value = "/index")
@@ -17,4 +16,8 @@ public class PageController {
 
         @RequestMapping(value = "/item")
         public String item(){return "item";}
+
+        @RequestMapping(value = "/order")
+        public String order(){return "order";}
+
 }
