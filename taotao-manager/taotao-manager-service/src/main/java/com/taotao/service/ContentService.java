@@ -22,8 +22,6 @@ public class ContentService extends BaseService<Content> {
     @Autowired
     private ContentMapper contentMapper;
 
-    @Autowired
-    private JedisCluster jedisCluster;
 
     public EasyUIResult queryContentList(Long categoryId, Integer page, Integer rows) {
         //设置分页参数

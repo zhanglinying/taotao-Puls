@@ -7,6 +7,7 @@ import com.taotao.mapper.ItemMapper;
 import com.taotao.pojo.Item;
 import com.taotao.pojo.ItemDesc;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -24,7 +25,13 @@ public class ItemService extends BaseService<Item> {
     private ItemDescService itemDescService;
 
     @Autowired
+    private ApiService apiService;
+
+    @Autowired
     private ItemMapper itemMapper;
+
+    @Value("http://www.taotao.com")
+    private  String TAOTAO_WEB_URL;
 
     public void saveItem(Item item, String desc) {
         //初始化数据
@@ -61,5 +68,12 @@ public class ItemService extends BaseService<Item> {
         itemDesc.setItemId(item.getId());
         itemDesc.setItemDesc(desc);
         this.itemDescService.updateService(itemDesc);
+        try {
+            String url=TAOTAO_WEB_URL+"/item/cache/"+item.getId()+".html";
+            this.apiService.doGet(url);
+        }catch (Exception e){
+            System.err.println("报错!!!");
+            e.printStackTrace();
+        }
     }
 }

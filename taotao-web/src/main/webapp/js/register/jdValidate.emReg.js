@@ -113,12 +113,12 @@ function reg() {
 		var _phone = $("#personRegForm [name=phone]").val();
 		$.ajax({
 			type : "POST",
-			url : "/service/user/doRegister",
+			url : "http://sso.taotao.com/service/user/doRegister",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
 			data : {password:_password,username:_username,phone:_phone},
 			dataType : 'json',
 			success : function(result) {
-				if(result.status == "200"){
+				if(result == "true"){
 					// 注册成功，去登录页
 					showMessage('注册成功，请登录！');
 					verc();
@@ -127,7 +127,7 @@ function reg() {
 					isSubmit = false;
 					return;
 				}else{
-					alert('注册失败，请重新注册！   ' + result.data );
+					alert('注册失败，请重新注册！   ' + result );
 				}
 //				if (result) {
 //					var obj = eval(result);

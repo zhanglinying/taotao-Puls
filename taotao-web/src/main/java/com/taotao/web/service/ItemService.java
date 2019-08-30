@@ -33,7 +33,7 @@ public class ItemService {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    private static final String REDIS_KEY = "TAOTAO_WEB_ITEM_DETALL";
+    public static final String REDIS_KEY = "TAOTAO_WEB_ITEM_DETALL";
 
     private static final String REDIS_KEY_DESC="TAOTAO_WEB_ITEM_DESC";
 

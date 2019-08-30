@@ -31,7 +31,7 @@ public class test {
         nodes.add(new HostAndPort("193.112.217.168",6386));
         JedisCluster jedisCluster = new JedisCluster(nodes);
         //jedisCluster.set("name","张三");
-        String name = jedisCluster.get("TAOTAO_MANAGER_ITEM_ALL");
-        System.out.println(name);
+        jedisCluster.del("TAOTAO_WEB_ITEM_DETALL605616");
+        //System.out.println(name);
     }
 }
