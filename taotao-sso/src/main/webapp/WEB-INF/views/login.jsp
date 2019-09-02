@@ -186,7 +186,7 @@
             </div>
         </div>
         <div class="free-regist">
-            <span><a href="http://www.taotao.com/user/register.html"
+            <span><a href="http://sso.taotao.com/register.html"
                      clstag="passport|keycount|login|08">免费注册&gt;&gt;</a></span>
         </div>
     </div>

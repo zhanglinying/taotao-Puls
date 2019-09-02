@@ -4,6 +4,7 @@ package com.taotao.sso.controller;
  * @date : 9:20 2019/8/28
  */
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.taotao.common.utils.CookieUtils;
 import com.taotao.sso.pojo.tb_user;
 import com.taotao.sso.service.UserService;
@@ -11,11 +12,9 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -28,25 +27,14 @@ import java.util.Map;
  * @author 小浪浪
  * @date 2019/8/28 9:20
  */
-@Controller
-@RequestMapping("user")
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     private static final String COOKIE_NAME = "TT_COOKIE";
-
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String toRegister() {
-        return "register";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String toLogin() {
-        return "login";
-    }
 
 
     /**
@@ -111,6 +99,7 @@ public class UserController {
 
     /**
      * 用户登录验证
+     *
      * @param username
      * @param password
      * @param request
@@ -141,18 +130,22 @@ public class UserController {
         return result;
     }
 
-    @RequestMapping(value = "{token}",method = RequestMethod.GET)
-    public ResponseEntity<tb_user> queryUserByToken(@PathVariable(value = "token")String token){
-       try {
-           tb_user user=this.userService.queryUserByToken(token);
-           if(null==user){
-               return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-           }
-           return ResponseEntity.ok(user);
-       }catch (Exception e){
-           e.printStackTrace();
-       }
-       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+    @RequestMapping(value = "{token}", method = RequestMethod.GET)
+    @ResponseBody
+    public JSONPObject queryUserByToken(@PathVariable(value = "token") String token,
+                                        @RequestParam(value = "callbackparam")String callback) {
+        try {
+            System.out.println(token+"==="+callback);
+            tb_user user = this.userService.queryUserByToken(token);
+            if (null == user) {
+                return null;
+            }
+            System.out.println(user.getUsername());
+            return new JSONPObject(callback,user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

@@ -1,0 +1,8 @@
+com\taotao\sso\service\UserService.class
+com\taotao\sso\service\impl\JedisClientCluster.class
+com\taotao\sso\mapper\UserMapper.class
+com\taotao\sso\service\CacheService.class
+com\taotao\sso\service\JedisClient.class
+com\taotao\sso\controller\PageContrller.class
+com\taotao\sso\pojo\tb_user.class
+com\taotao\sso\controller\UserController.class

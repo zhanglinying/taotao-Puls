@@ -1,0 +1,14 @@
+com\taotao\web\httpclient\HttpResult.class
+com\taotao\web\controller\ItemController.class
+com\taotao\web\controller\PageController.class
+com\taotao\web\httpclient\IdleConnectionEvictor.class
+com\taotao\web\controller\IndexController.class
+com\taotao\web\service\ApiService.class
+com\taotao\web\service\ItemService.class
+com\taotao\web\service\IndexService.class
+com\taotao\web\service\impl\JedisClientCluster.class
+com\taotao\web\bean\ItemDesc.class
+com\taotao\web\controller\ItemCacheController.class
+com\taotao\web\service\ItemCacheService.class
+com\taotao\web\bean\Item.class
+com\taotao\web\service\JedisClient.class

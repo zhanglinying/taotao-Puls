@@ -16,7 +16,7 @@
 			</li>
 			<li class="fore3 ld menu" id="app-jd" data-widget="dropdown" clstag="homepage|keycount|home2013|01d">
 				<s></s><i></i><span class="outline"></span><span class="blank"></span>
-				<a href="http://app.jd.com/" target="_blank">手机淘淘</a><b></b>
+				<a href="http://app.jd.com/" target="_blan最近更新最近更新最近更新最近更新最近更新最近更新最近更新最近更新k">手机淘淘</a><b></b>
 			</li>
 			<li class="fore4 ld menu" id="biz-service" data-widget="dropdown" clstag="homepage|keycount|home2013|01e">
 				<s></s>

@@ -1,0 +1,16 @@
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\mapper\IMapper.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\util\ValidateUtil.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\mapper\OrderMapper.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\pojo\OrderItem.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\controller\OrderController.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\pojo\OrderShipping.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\dao\IOrder.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\pojo\ResultMsg.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\job\PaymentOrderJob.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\bean\OperaterEnum.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\bean\TaotaoResult.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\service\OrderService.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\dao\OrderDAO.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\pojo\Order.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\bean\Where.java
+E:\java项目\taotao-Puls\taotao-order\src\main\java\com\taotao\store\order\pojo\PageResult.java

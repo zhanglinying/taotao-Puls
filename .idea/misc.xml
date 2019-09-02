@@ -9,6 +9,7 @@
     <file type="web" url="file://$PROJECT_DIR$/taotao-common" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-utils" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-web" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-order" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-sso" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-web" />
   </component>
@@ -27,5 +28,5 @@
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8.0_191" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
