@@ -4,6 +4,7 @@ package com.taotao.sso.controller;
  * @date : 9:20 2019/8/28
  */
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.taotao.common.utils.CookieUtils;
 import com.taotao.sso.pojo.tb_user;
@@ -12,9 +13,11 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -27,7 +30,7 @@ import java.util.Map;
  * @author 小浪浪
  * @date 2019/8/28 9:20
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 
@@ -132,20 +135,19 @@ public class UserController {
 
     @RequestMapping(value = "{token}", method = RequestMethod.GET)
     @ResponseBody
-    public JSONPObject queryUserByToken(@PathVariable(value = "token") String token,
-                                        @RequestParam(value = "callbackparam")String callback) {
+    public String queryUserByToken(@PathVariable(value = "token") String token){
         try {
-            System.out.println(token+"==="+callback);
             tb_user user = this.userService.queryUserByToken(token);
             if (null == user) {
                 return null;
             }
             System.out.println(user.getUsername());
-            return new JSONPObject(callback,user);
+            String jsonString = JSON.toJSONString(user);
+            System.out.println(jsonString+"====");
+            return jsonString;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-
 }

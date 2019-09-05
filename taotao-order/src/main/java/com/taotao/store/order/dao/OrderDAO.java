@@ -32,7 +32,13 @@ public class OrderDAO implements IOrder {
 
 	@Override
 	public PageResult<Order> queryOrderByUserNameAndPage(String buyerNick, Integer page, Integer count) {
-		return null;
+		PageBounds bounds = new PageBounds();
+		bounds.setContainsTotalCount(true);
+		bounds.setLimit(count);
+		bounds.setPage(page);
+		bounds.setOrders(com.github.miemiedev.mybatis.paginator.domain.Order.formString("create_time.desc"));
+		PageList<Order> list = this.orderMapper.queryListByWhere(bounds, Where.build("buyer_nick", buyerNick));
+		return new PageResult<Order>(list.getPaginator().getTotalCount(), list);
 	}
 
 	/*@Override

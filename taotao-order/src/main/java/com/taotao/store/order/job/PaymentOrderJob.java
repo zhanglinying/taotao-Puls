@@ -19,5 +19,4 @@ public class PaymentOrderJob extends QuartzJobBean {
         //时间参数，当前时间向前推2天
         applicationContext.getBean(OrderMapper.class).paymentOrderScan(new DateTime().minusDays(2).toDate());
     }
-
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taotao.store.order.bean.TaotaoResult;
 import com.taotao.store.order.dao.IOrder;
 import com.taotao.store.order.pojo.Order;
+import com.taotao.store.order.pojo.OrderItem;
 import com.taotao.store.order.pojo.PageResult;
 import com.taotao.store.order.pojo.ResultMsg;
 import com.taotao.store.order.util.ValidateUtil;
@@ -26,7 +27,11 @@ public class OrderService {
     public TaotaoResult createOrder(String json) {
         Order order = null;
         try {
+            System.out.println(json);
             order = objectMapper.readValue(json, Order.class);
+            for (OrderItem order1:order.getOrderItems()){
+                System.out.println(order1.getTitle());
+            }
             // 校验Order对象
             ValidateUtil.validate(order);
         } catch (Exception e) {

@@ -1,5 +1,6 @@
 package com.taotao.store.order.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.taotao.store.order.bean.TaotaoResult;
 import com.taotao.store.order.pojo.Order;
 import com.taotao.store.order.pojo.PageResult;
@@ -35,8 +36,12 @@ public class OrderController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/query/{orderId}" ,method = RequestMethod.GET)
-	public Order queryOrderById(@PathVariable("orderId") String orderId) {
-		return orderService.queryOrderById(orderId);
+	public String queryOrderById(@PathVariable("orderId") String orderId) {
+		System.out.println(orderId);
+		Order order = orderService.queryOrderById(orderId);
+		String jsonString = JSON.toJSONString(order);
+		System.out.println(jsonString);
+		return jsonString;
 	}
 
 	/**
@@ -48,8 +53,11 @@ public class OrderController {
 	 */
 	@ResponseBody
 	@RequestMapping("/query/{buyerNick}/{page}/{count}")
-	public PageResult<Order> queryOrderByUserNameAndPage(@PathVariable("buyerNick") String buyerNick,@PathVariable("page") Integer page,@PathVariable("count") Integer count) {
-		return orderService.queryOrderByUserNameAndPage(buyerNick, page, count);
+	public String queryOrderByUserNameAndPage(@PathVariable("buyerNick") String buyerNick,@PathVariable("page") Integer page,@PathVariable("count") Integer count) {
+        PageResult<Order> orderPageResult = orderService.queryOrderByUserNameAndPage(buyerNick, page, count);
+		String jsonString = JSON.toJSONString(orderPageResult);
+		System.out.println(jsonString);
+		return jsonString;
 	}
 
 	

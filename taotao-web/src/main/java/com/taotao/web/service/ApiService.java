@@ -9,6 +9,8 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -108,6 +110,28 @@ public class ApiService implements BeanFactoryAware {
             }
         }
     }
+
+    public HttpResult doPostJSON(String url, String params) throws IOException {
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.setConfig(requestConfig);
+        if (null != params) {
+            //构造一个form表单式的实体
+            StringEntity urlEncodedFormEntity = new StringEntity(params, ContentType.APPLICATION_JSON);
+            //将请求参数设置到httpPost对象中
+            httpPost.setEntity(urlEncodedFormEntity);
+        }
+        CloseableHttpResponse response=null;
+        try {
+            //执行请求
+            response=this.getCloseableHttpClient().execute(httpPost);
+            return new HttpResult(response.getStatusLine().getStatusCode(),EntityUtils.toString(response.getEntity(),"UTF-8"));
+        }finally {
+            if(response!=null){
+                response.close();
+            }
+        }
+    }
+
 
     private CloseableHttpClient getCloseableHttpClient(){
         return this.beanFactory.getBean(CloseableHttpClient.class);

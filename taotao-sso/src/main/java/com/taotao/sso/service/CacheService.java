@@ -20,7 +20,6 @@ public class CacheService {
 
 
     public void setAndExpire(String s, tb_user user, int i) {
-
         this.jedisClient.setAndExpire(s,user,i);
     }
 }

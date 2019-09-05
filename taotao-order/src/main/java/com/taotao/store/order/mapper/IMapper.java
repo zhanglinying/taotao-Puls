@@ -2,7 +2,7 @@ package com.taotao.store.order.mapper;
 
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.github.miemiedev.mybatis.paginator.domain.PageList;
-import jdk.nashorn.internal.objects.annotations.Where;
+import com.taotao.store.order.bean.Where;
 import org.apache.ibatis.annotations.Param;
 
 public interface IMapper<T> {

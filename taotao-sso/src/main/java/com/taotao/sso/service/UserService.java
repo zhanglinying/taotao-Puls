@@ -10,6 +10,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -18,6 +19,7 @@ import java.util.Date;
  * @date 2019/8/28 11:02
  */
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
@@ -74,24 +76,27 @@ public class UserService {
         if (!StringUtils.equals(DigestUtils.md5Hex(password), user.getPassword())) {
             return null;
         }
-        //登录成功!
         //生存token
-        String token = DigestUtils.md5Hex(System.currentTimeMillis() + username);
-
-        this.cacheService.setAndExpire("TOKEN_" + token, user, 60 * 30);
+        String token = DigestUtils.md5Hex(username);
+        String key = "TOKEN_" + token;
+        //登录成功!
+        this.cacheService.setAndExpire(key, user, 60 * 30);
         //this.jedisClient.setAndExpire("TOKEN_"+token,user,60*30);
         return token;
     }
 
+
+
+
     public tb_user queryUserByToken(String token) {
-        String key="TOKEN_"+token;
+        String key = "TOKEN_" + token;
         String jsonData = this.jedisClient.get(key);
         if (StringUtils.isEmpty(jsonData)) {
             return null;
         }
         try {
             //刷新用户的生存时间
-            this.jedisClient.expire(key,60*30);
+            this.jedisClient.expire(key, 60 * 30);
             return OBJECT_MAPPR.readValue(jsonData, tb_user.class);
         } catch (Exception e) {
             e.printStackTrace();

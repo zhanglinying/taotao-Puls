@@ -33,13 +33,11 @@ public class JedisClientCluster implements JedisClient {
         String json = jedisCluster.get(key);
 
         if (StringUtils.isNotEmpty(json)) {
-
             try {
                 return OBJECT_MAPPER.readValue(json, clazz);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
         return null;
     }
@@ -84,11 +82,14 @@ public class JedisClientCluster implements JedisClient {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
-        jedisCluster.set(key, json);
-
-        jedisCluster.expire(key, expire);
-
+        try {
+            jedisCluster.set(key, json);
+            jedisCluster.expire(key, expire);
+        } catch (Exception e) {
+            System.out.println("异常!!!");
+            jedisCluster.set(key, json);
+            jedisCluster.expire(key, expire);
+        }
     }
 
 
@@ -100,8 +101,12 @@ public class JedisClientCluster implements JedisClient {
 
 
     public String get(String key) {
-
-        return jedisCluster.get(key);
+        try {
+            return jedisCluster.get(key);
+        } catch (Exception e) {
+            System.out.println("异常!!!");
+            return jedisCluster.get(key);
+        }
 
     }
 

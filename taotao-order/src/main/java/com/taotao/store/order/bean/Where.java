@@ -11,6 +11,10 @@ public class Where {
 
     private String operater;
 
+
+    public Where() {
+    }
+
     private Where(String column, Object value, String operater) {
         this.column = column;
         this.value = value;
