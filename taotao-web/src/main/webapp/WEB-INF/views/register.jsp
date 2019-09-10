@@ -15,11 +15,11 @@
 <body>
     <script type="text/javascript">
 function login() {
-    location.href = "/user/login.html";
+    location.href = "http://sso.taotao.com/login.html";
     return false
 }
 function regist() {
-    location.href = "/user/register.html";
+    location.href = "http://sso.taotao.com/register.html";
     return false
 }
 (function (a) {
@@ -80,7 +80,7 @@ function addToFavorite() {
 <div class="w" id="logo">
     <div>
     	<a href="http://www.taotao.com/">
-    		<img src="/images/taotao-logo.gif" alt="京东商城" width="170" height="60"/>
+    		<img src="http://static.taotao.com/images/taotao-logo.gif" alt="京东商城" width="170" height="60"/>
     	</a> <b></b>
     </div>
 </div>

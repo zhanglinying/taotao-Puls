@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date 2019-08-01 15:35
  */
 @Controller
-@RequestMapping("item/desc")
+@RequestMapping("/item/desc")
 public class ItemDescController {
 
     @Autowired

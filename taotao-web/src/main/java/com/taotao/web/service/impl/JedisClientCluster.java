@@ -27,6 +27,7 @@ public class JedisClientCluster implements JedisClient {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+    @Override
     public <T> T get(String key, TypeReference<T> clazz) {
 
         String json = jedisCluster.get(key);
@@ -44,6 +45,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public <T> T get(String key, Class<T> clazz) {
 
         String json = jedisCluster.get(key);
@@ -61,6 +63,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public void set(String key, Object o) {
 
         String json = null;
@@ -75,6 +78,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public void setAndExpire(String key, Object o, int expire) {
 
         String json = null;
@@ -98,6 +102,7 @@ public class JedisClientCluster implements JedisClient {
 // }
 
 
+    @Override
     public String get(String key) {
 
         return jedisCluster.get(key);
@@ -139,6 +144,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public Long decr(String key) {
 
         return jedisCluster.decr(key);
@@ -183,6 +189,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public Long rpush(String key, String string) {
 
         return jedisCluster.rpush(key, string);
@@ -190,6 +197,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public Long lpush(String key, String string) {
 
         return jedisCluster.lpush(key, string);
@@ -197,6 +205,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public Boolean exists(String key) {
 
         return jedisCluster.exists(key);
@@ -204,6 +213,7 @@ public class JedisClientCluster implements JedisClient {
     }
 
 
+    @Override
     public List<String> brpop(int timeout, String key) {
 
         return jedisCluster.brpop(timeout, key);

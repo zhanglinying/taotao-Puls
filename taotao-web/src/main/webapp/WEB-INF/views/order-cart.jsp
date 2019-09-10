@@ -25,7 +25,7 @@
 <!--shortcut end-->
 
 <div class="w w1 header clearfix">
-    <div id="logo"><a href="http://www.taotao.com/"><img src="/images/taotao-logo.gif" alt="淘淘商城"></a></div>
+    <div id="logo"><a href="http://www.taotao.com/"><img src="http://static.taotao.com/images/taotao-logo.gif" alt="淘淘商城"></a></div>
 </div>
 <!-- /header -->
 <!--/ /widget/header/header.tpl -->

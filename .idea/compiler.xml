@@ -11,7 +11,9 @@
         <module name="taotao-manager-mapper" />
         <module name="taotao-common" />
         <module name="taotao-order" />
+        <module name="itcast-solrj" />
         <module name="taotao-manager-pojo" />
+        <module name="taotao-search" />
         <module name="taotao-manager-uitls" />
         <module name="itcast-httpclient" />
         <module name="taotao-sso" />
@@ -20,6 +22,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="itcast-httpclient" target="1.5" />
+      <module name="itcast-solrj" target="1.5" />
       <module name="taotao-cmomon" target="1.7" />
       <module name="taotao-common" target="1.7" />
       <module name="taotao-manager" target="1.7" />
@@ -30,6 +33,7 @@
       <module name="taotao-manager-web" target="1.7" />
       <module name="taotao-order" target="1.7" />
       <module name="taotao-parent" target="1.7" />
+      <module name="taotao-search" target="1.7" />
       <module name="taotao-sso" target="1.7" />
       <module name="taotao-web" target="1.7" />
       <module name="taotaomanagerutils" target="1.7" />

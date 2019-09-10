@@ -26,7 +26,6 @@ public class ItemController {
 
     @RequestMapping(value = "{itemId}",method = RequestMethod.GET)
     public ModelAndView showDetail(@PathVariable("itemId")Long itemId){
-        System.out.println(itemId);
         ModelAndView modelAndView = new ModelAndView("item");
         //商品数据
         Item item=this.itemService.queryItemByItemId(itemId);
@@ -34,10 +33,10 @@ public class ItemController {
         //商品详情数据
         ItemDesc itemDesc=this.itemService.queryItemDescByItemId(itemId);
         modelAndView.addObject("itemDesc",itemDesc);
-        //商品规格数据
+        /*商品规格数据
         String itemParam=this.itemService.queryItemParamByItemId(itemId);
         System.out.println(itemParam);
-        modelAndView.addObject("itemParam",itemParam);
+        modelAndView.addObject("itemParam",itemParam);*/
         return modelAndView;
     }
 }

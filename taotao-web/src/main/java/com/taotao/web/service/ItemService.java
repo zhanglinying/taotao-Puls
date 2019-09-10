@@ -87,6 +87,7 @@ public class ItemService {
         try {
             if(jedisClient.exists(key)){
                 String cacheData = this.jedisClient.get(key);
+                System.out.println(cacheData);
                 return OBJECT_MAPPER.readValue(cacheData,ItemDesc.class);
             }
         }catch (Exception e){

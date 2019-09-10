@@ -26,7 +26,7 @@ import java.util.List;
  * @date 2019-08-01 15:35
  */
 @Controller
-@RequestMapping("item")
+@RequestMapping("/item")
 public class ItemController {
 
     //输出日志信息

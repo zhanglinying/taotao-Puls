@@ -135,6 +135,7 @@
           <configuration>
             <port>8084</port>
             <path>/</path>
+            <uriEncoding>UTF-8</uriEncoding>
           </configuration>
         </plugin>
         <plugin>

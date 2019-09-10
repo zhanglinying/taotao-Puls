@@ -91,8 +91,9 @@ public class ApiService implements BeanFactoryAware {
         httpPost.setConfig(requestConfig);
         if (null != params) {
             List<NameValuePair> pairList = new ArrayList<>();
-            for (Map.Entry<String, String> entry : params.entrySet())
+            for (Map.Entry<String, String> entry : params.entrySet()) {
                 pairList.add(new BasicNameValuePair(entry.getKey(),entry.getValue()));
+            }
             //构造一个form表单式的实体
             UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(pairList, "UTF-8");
             //将请求参数设置到httpPost对象中

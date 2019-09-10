@@ -19,6 +19,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -82,6 +83,7 @@ public class ApiService implements BeanFactoryAware {
 
     /**
      * 执行post请求
+     *
      * @param url
      * @param params
      * @return
@@ -92,20 +94,21 @@ public class ApiService implements BeanFactoryAware {
         httpPost.setConfig(requestConfig);
         if (null != params) {
             List<NameValuePair> pairList = new ArrayList<>();
-            for (Map.Entry<String, String> entry : params.entrySet())
-                pairList.add(new BasicNameValuePair(entry.getKey(),entry.getValue()));
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                pairList.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
+            }
             //构造一个form表单式的实体
             UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(pairList, "UTF-8");
             //将请求参数设置到httpPost对象中
             httpPost.setEntity(urlEncodedFormEntity);
         }
-        CloseableHttpResponse response=null;
+        CloseableHttpResponse response = null;
         try {
             //执行请求
-            response=this.getCloseableHttpClient().execute(httpPost);
-            return new HttpResult(response.getStatusLine().getStatusCode(),EntityUtils.toString(response.getEntity(),"UTF-8"));
-        }finally {
-            if(response!=null){
+            response = this.getCloseableHttpClient().execute(httpPost);
+            return new HttpResult(response.getStatusLine().getStatusCode(), EntityUtils.toString(response.getEntity(), "UTF-8"));
+        } finally {
+            if (response != null) {
                 response.close();
             }
         }
@@ -120,20 +123,20 @@ public class ApiService implements BeanFactoryAware {
             //将请求参数设置到httpPost对象中
             httpPost.setEntity(urlEncodedFormEntity);
         }
-        CloseableHttpResponse response=null;
+        CloseableHttpResponse response = null;
         try {
             //执行请求
-            response=this.getCloseableHttpClient().execute(httpPost);
-            return new HttpResult(response.getStatusLine().getStatusCode(),EntityUtils.toString(response.getEntity(),"UTF-8"));
-        }finally {
-            if(response!=null){
+            response = this.getCloseableHttpClient().execute(httpPost);
+            return new HttpResult(response.getStatusLine().getStatusCode(), EntityUtils.toString(response.getEntity(), "UTF-8"));
+        } finally {
+            if (response != null) {
                 response.close();
             }
         }
     }
 
 
-    private CloseableHttpClient getCloseableHttpClient(){
+    private CloseableHttpClient getCloseableHttpClient() {
         return this.beanFactory.getBean(CloseableHttpClient.class);
     }
 

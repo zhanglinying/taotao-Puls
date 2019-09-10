@@ -22,6 +22,7 @@
         <module>../taotao-common</module>
         <module>../taotao-sso</module>
         <module>../taotao-order</module>
+        <module>../taotao-search</module>
     </modules>
     <dependencies>
         <dependency>

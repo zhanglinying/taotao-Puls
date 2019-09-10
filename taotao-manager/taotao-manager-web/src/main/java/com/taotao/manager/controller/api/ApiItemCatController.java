@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2019-08-08 9:34
  */
 @Controller
-@RequestMapping("api/item/cat")
+@RequestMapping("/api/item/cat")
 public class ApiItemCatController {
 
     @Autowired
@@ -50,7 +50,7 @@ public class ApiItemCatController {
      * @date 2019-08-08 09:45:44
      * @return {@link ResponseEntity< ItemCatResult>}
      **/
-    @RequestMapping(value = "all",method = RequestMethod.GET)
+    @RequestMapping(value = "/all",method = RequestMethod.GET)
     public ResponseEntity<String> queryItemCat(@RequestParam("callback")String callback){
         try{
             ItemCatResult itemCatResult = this.itemCatService.queryAllToTree();

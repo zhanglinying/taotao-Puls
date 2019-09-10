@@ -46,7 +46,7 @@
 		<input type="hidden" name="orderShipping.receiverAddress" value="浦江镇 江玮路450弄42号402（闵浦新苑五村）"/>
 	</form>
 	<div class="w w1 header clearfix">
-		<div id="logo"><a href="http://www.taotao.com/"><img src="/images/taotao-logo.gif"  alt="淘淘商城" /></a></div>
+		<div id="logo"><a href="http://www.taotao.com/"><img src="http://static.taotao.com/images/taotao-logo.gif"  alt="淘淘商城" /></a></div>
 		<div class="progress clearfix">
 			<ul class="progress-2">
 				<li class="s1"><b></b>1.我的购物车</li>

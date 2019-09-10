@@ -14,6 +14,7 @@ com\taotao\web\handlerInterceptor\UserLoginHandlerInterceptor.class
 com\taotao\web\controller\IndexController.class
 com\taotao\web\service\ApiService.class
 com\taotao\web\bean\Order.class
+com\taotao\web\threadlocal\UserThreadlocal.class
 com\taotao\web\bean\ItemDesc.class
 com\taotao\web\bean\OrderItem.class
 com\taotao\web\service\ItemCacheService.class
