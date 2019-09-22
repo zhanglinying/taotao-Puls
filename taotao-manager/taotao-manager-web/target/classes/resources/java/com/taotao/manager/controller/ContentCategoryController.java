@@ -20,7 +20,7 @@ import java.util.List;
  * @date 2019-08-09 16:58
  */
 @Controller
-@RequestMapping(value = "content/category")
+@RequestMapping(value = "/content/category")
 public class ContentCategoryController {
 
     @Autowired

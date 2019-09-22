@@ -46,4 +46,8 @@
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>taotao-search</servlet-name>
+    <url-pattern>/service/*</url-pattern>
+  </servlet-mapping>
 </web-app>

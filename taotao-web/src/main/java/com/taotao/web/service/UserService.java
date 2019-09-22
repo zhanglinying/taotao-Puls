@@ -23,6 +23,7 @@ public class UserService {
     public tb_user queryUserByToken(String token) throws IOException {
         String url=TAOTAO_SSO_URL+"/service/user/"+token;
         String jsonData=this.apiService.doGet(url);
+        System.out.println(jsonData);
         String jsonData2=jsonData.replaceAll("\\\\","");
         String jsonData3=jsonData2.substring(1,jsonData2.length()-1);
         if(!StringUtils.isEmpty(jsonData)){

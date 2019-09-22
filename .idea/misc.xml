@@ -6,6 +6,7 @@
     </list>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/taotao-cart" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-common" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-utils" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-web" />
@@ -27,6 +28,7 @@
         <option value="$PROJECT_DIR$/taotao-web/pom.xml" />
         <option value="$PROJECT_DIR$/../itcast-httpclient/pom.xml" />
         <option value="$PROJECT_DIR$/../itcast-solrj/pom.xml" />
+        <option value="$PROJECT_DIR$/../itcast-rabbitmq/pom.xml" />
       </list>
     </option>
   </component>

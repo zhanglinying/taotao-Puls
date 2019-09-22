@@ -32,6 +32,10 @@
     <filter>
         <filter-name>HttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF8</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>HttpMethodFilter</filter-name>
@@ -42,6 +46,10 @@
     <filter>
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF8</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>HiddenHttpMethodFilter</filter-name>

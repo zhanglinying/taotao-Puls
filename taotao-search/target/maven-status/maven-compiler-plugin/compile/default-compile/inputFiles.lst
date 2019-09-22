@@ -1,6 +1,12 @@
+E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\controller\UserController.java
+E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\service\JedisClient.java
 E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\service\SearchService.java
 E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\httpclient\HttpResult.java
 E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\httpclient\IdleConnectionEvictor.java
+E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\service\ApiService.java
+E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\service\ItemService.java
 E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\bean\SearchResult.java
 E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\controller\SearchController.java
+E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\service\impl\JedisClientCluster.java
+E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\mq\handler\ItemMQHandler.java
 E:\java项目\taotao-Puls\taotao-search\src\main\java\com\taotao\search\pojo\Item.java

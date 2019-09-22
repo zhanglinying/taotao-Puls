@@ -1,6 +1,12 @@
+com\taotao\search\service\ApiService.class
 com\taotao\search\httpclient\HttpResult.class
 com\taotao\search\controller\SearchController.class
 com\taotao\search\pojo\Item.class
+com\taotao\search\service\JedisClient.class
 com\taotao\search\httpclient\IdleConnectionEvictor.class
 com\taotao\search\service\SearchService.class
+com\taotao\search\service\impl\JedisClientCluster.class
+com\taotao\search\service\ItemService.class
+com\taotao\search\controller\UserController.class
 com\taotao\search\bean\SearchResult.class
+com\taotao\search\mq\handler\ItemMQHandler.class

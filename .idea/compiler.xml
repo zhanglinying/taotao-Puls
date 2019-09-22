@@ -6,23 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="taotao-web" />
-        <module name="taotao-manager-web" />
-        <module name="taotao-manager-mapper" />
-        <module name="taotao-common" />
-        <module name="taotao-order" />
         <module name="itcast-solrj" />
         <module name="taotao-manager-pojo" />
+        <module name="taotao-manager-web" />
+        <module name="itcast-rabbitmq" />
         <module name="taotao-search" />
-        <module name="taotao-manager-uitls" />
-        <module name="itcast-httpclient" />
+        <module name="taotao-order" />
+        <module name="taotao-cart" />
         <module name="taotao-sso" />
+        <module name="taotao-common" />
+        <module name="taotao-manager-uitls" />
+        <module name="taotao-web" />
+        <module name="itcast-httpclient" />
         <module name="taotao-manager-service" />
+        <module name="taotao-manager-mapper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="itcast-httpclient" target="1.5" />
+      <module name="itcast-rabbitmq" target="1.5" />
       <module name="itcast-solrj" target="1.5" />
+      <module name="taotao-cart" target="1.7" />
       <module name="taotao-cmomon" target="1.7" />
       <module name="taotao-common" target="1.7" />
       <module name="taotao-manager" target="1.7" />

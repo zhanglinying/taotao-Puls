@@ -24,7 +24,6 @@ public class UserLoginHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         UserThreadlocal.set(null);
-
         String token = CookieUtils.getCookieValue(request, COOKIE_NAME);
         if (StringUtils.isEmpty(token)) {
             //未登录状态

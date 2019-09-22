@@ -52,7 +52,9 @@ public class ItemService {
         try {
             if(jedisClient.exists(key)){
                 String cacheData = this.jedisClient.get(key);
-                return OBJECT_MAPPER.readValue(cacheData,Item.class);
+                String data = StringUtils.removeAll(cacheData, "\\\\");
+                String data2 = data.substring(1, data.length() - 1);
+                return OBJECT_MAPPER.readValue(data2,Item.class);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -88,7 +90,8 @@ public class ItemService {
             if(jedisClient.exists(key)){
                 String cacheData = this.jedisClient.get(key);
                 System.out.println(cacheData);
-                return OBJECT_MAPPER.readValue(cacheData,ItemDesc.class);
+                String data = StringUtils.removeAll(cacheData, "\\\\");
+                return OBJECT_MAPPER.readValue(data,ItemDesc.class);
             }
         }catch (Exception e){
             e.printStackTrace();
