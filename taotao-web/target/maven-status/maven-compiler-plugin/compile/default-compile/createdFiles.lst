@@ -1,4 +1,5 @@
 com\taotao\web\httpclient\HttpResult.class
+com\taotao\web\bean\tb_cart.class
 com\taotao\web\controller\ItemController.class
 com\taotao\web\httpclient\IdleConnectionEvictor.class
 com\taotao\web\service\ItemService.class
@@ -17,6 +18,7 @@ com\taotao\web\bean\Order.class
 com\taotao\web\threadlocal\UserThreadlocal.class
 com\taotao\web\mq\handler\ItemMQHandler.class
 com\taotao\web\bean\ItemDesc.class
+com\taotao\web\service\CartService.class
 com\taotao\web\bean\OrderItem.class
 com\taotao\web\service\ItemCacheService.class
 com\taotao\web\bean\Item.class

@@ -8,6 +8,7 @@ E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\bean\ItemDesc.
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\bean\Order.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\service\IndexService.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\service\ItemService.java
+E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\service\CartService.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\threadlocal\UserThreadlocal.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\mq\handler\ItemMQHandler.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\controller\OrderController.java
@@ -23,3 +24,4 @@ E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\controller\Ite
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\service\OrderService.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\controller\UserController.java
 E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\bean\tb_user.java
+E:\java项目\taotao-Puls\taotao-web\src\main\java\com\taotao\web\bean\tb_cart.java

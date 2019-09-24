@@ -1,6 +1,8 @@
 package com.taotao.cart.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang.StringUtils;
 
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Table(name = "tb_item")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
 
     @Id
@@ -31,9 +34,9 @@ public class Item {
     private Long cid;
 
     private Integer status;
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date created;
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updated;
 
     public Long getId() {

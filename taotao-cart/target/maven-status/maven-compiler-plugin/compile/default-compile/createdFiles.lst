@@ -12,4 +12,5 @@ com\taotao\cart\service\impl\JedisClientCluster.class
 com\taotao\cart\service\ItemService.class
 com\taotao\cart\mapper\CartMapper.class
 com\taotao\cart\threadlocal\UserThreadlocal.class
+com\taotao\cart\controller\UserController.class
 com\taotao\cart\service\CartService.class

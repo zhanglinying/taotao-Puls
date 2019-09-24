@@ -51,7 +51,7 @@ public class ItemService {
         try {
             if(jedisClient.exists(key)){
                 String cacheData = this.jedisClient.get(key);
-                String data = cacheData.replaceAll(cacheData, "\\\\");
+                String data = cacheData.replaceAll( "\\\\","");
                 return OBJECT_MAPPER.readValue(data,Item.class);
             }
         }catch (Exception e){
@@ -61,6 +61,7 @@ public class ItemService {
         String url = TAOTAO_MANAGER_URL + "/rest/item/" + itemId;
         try {
             String jsonData = this.apiService.doGet(url);
+            System.out.println(jsonData+"===");
             if (StringUtils.isEmpty(jsonData)) {
                 return null;
             }

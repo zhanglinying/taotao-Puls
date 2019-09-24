@@ -1,0 +1,5 @@
+127.0.0.1 - - [23/Sep/2019:12:01:58 +0800] "GET /item/1101157319.html HTTP/1.0" 200 41102 http-bio-8082-exec-1 2181
+127.0.0.1 - - [23/Sep/2019:12:01:59 +0800] "GET /service/user/21d986ea5265e95afa776c619b35f7ec HTTP/1.0" 200 23 http-bio-8082-exec-2 383
+127.0.0.1 - - [23/Sep/2019:12:07:40 +0800] "GET /cart/create.html HTTP/1.0" 404 983 http-bio-8082-exec-3 16
+127.0.0.1 - - [23/Sep/2019:12:07:58 +0800] "GET /order/create.html HTTP/1.0" 200 47831 http-bio-8082-exec-4 381
+127.0.0.1 - - [23/Sep/2019:12:07:59 +0800] "GET /service/user/21d986ea5265e95afa776c619b35f7ec HTTP/1.0" 200 23 http-bio-8082-exec-5 398

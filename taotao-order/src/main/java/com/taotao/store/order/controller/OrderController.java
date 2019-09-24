@@ -24,7 +24,7 @@ public class OrderController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create")
     public TaotaoResult createOrder(@RequestBody String json) {
         return orderService.createOrder(json);
     }
